@@ -135,8 +135,8 @@ GameObject:
   - component: {fileID: 33932341}
   - component: {fileID: 33932340}
   m_Layer: 0
-  m_Name: Square (1)
-  m_TagString: Untagged
+  m_Name: Wall
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -246,8 +246,8 @@ GameObject:
   - component: {fileID: 357611932}
   - component: {fileID: 357611931}
   m_Layer: 0
-  m_Name: Square (3)
-  m_TagString: Untagged
+  m_Name: Wall
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -377,6 +377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88bf5d6184a48f343b139f1c9c861506, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SegmentPrefab: {fileID: 5125035594493770521, guid: bdf45778c8b559442b7eb528d10e013a, type: 3}
 --- !u!50 &450397771
 Rigidbody2D:
   serializedVersion: 4
@@ -503,8 +504,8 @@ GameObject:
   - component: {fileID: 567951112}
   - component: {fileID: 567951111}
   m_Layer: 0
-  m_Name: Square (2)
-  m_TagString: Untagged
+  m_Name: Wall
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -700,7 +701,7 @@ GameObject:
   - component: {fileID: 1779086853}
   m_Layer: 0
   m_Name: Food
-  m_TagString: Untagged
+  m_TagString: Food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -823,8 +824,8 @@ GameObject:
   - component: {fileID: 2055625892}
   - component: {fileID: 2055625891}
   m_Layer: 0
-  m_Name: Square
-  m_TagString: Untagged
+  m_Name: Wall
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
