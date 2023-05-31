@@ -26,6 +26,8 @@ public class Snake : MonoBehaviour
             _direction = Vector2.left;
         } else if (Input.GetKeyDown(KeyCode.D)) {
             _direction = Vector2.right;
+        } else if (Input.GetKey("escape")) {
+            Reset();
         }
     }
     private void FixedUpdate()
@@ -47,12 +49,24 @@ public class Snake : MonoBehaviour
         segment.position = _segments[_segments.Count - 1].position;
         _segments.Add(segment);
     }
+    private void Reset()
+    {
+        for (int i= 1 ; i < _segments.Count;i++)
+        {
+            Destroy(_segments[i].gameObject);
+        }
+        _segments.Clear();
+        _segments.Add(this.transform);
+        this.transform.position = Vector3.zero;
+    }
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Food") {
             Grow();
+        } else if (other.tag == "Obstacle"){
+            Reset();
         }
     }
 }
-//penis
