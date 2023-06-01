@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class Snake : MonoBehaviour
 {
+    //доступные направления
+    private bool right = true;
+    private bool left = false;
+    private bool up = true;
+    private bool down = true;
+
     private Vector2 _direction = Vector2.right;
 
     private List<Transform> _segments;
@@ -18,18 +24,48 @@ public class Snake : MonoBehaviour
 
     private void Update()
     {
+        //изменил правило передвижения змейки (нужна оптимизация (наверное))
+        //Змейка не может резко повернуть назад
             if (Input.GetKeyDown(KeyCode.W)) {
-            _direction = Vector2.up;
+                if (up) {
+                    _direction = Vector2.up;
+                    up = true;
+                    down = false;
+                    left = true;
+                    right = true;
+                }
+            
         } else if (Input.GetKeyDown(KeyCode.S)) {
-            _direction = Vector2.down;
+            if (down) {
+                _direction = Vector2.down;
+                down = true;
+                up = false;
+                right = true;
+                left = true;
+            }
+            
         } else if (Input.GetKeyDown(KeyCode.A)) {
-            _direction = Vector2.left;
+            if (left) {
+                _direction = Vector2.left;
+                left = true;
+                right = false;
+                up = true;
+                down = true;
+            }
+            
         } else if (Input.GetKeyDown(KeyCode.D)) {
-            _direction = Vector2.right;
+            if (right) {
+                _direction = Vector2.right;
+                right = true;
+                left = false;
+                up = true;
+                down = true;
+            }
         } else if (Input.GetKey("escape")) {
             Reset();
         }
     }
+
     private void FixedUpdate()
     {
         for (int i=_segments.Count-1;i>0;i--)
