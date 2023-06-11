@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Snake : MonoBehaviour
 {
+    public Timer time;
     //доступные направления
     private bool right = true;
     private bool left = false;
@@ -94,6 +95,7 @@ public class Snake : MonoBehaviour
         _segments.Clear();
         _segments.Add(this.transform);
         this.transform.position = Vector3.zero;
+        time.Reset = true;
     }
 
 
