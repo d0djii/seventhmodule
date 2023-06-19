@@ -20,19 +20,23 @@ public class bettermoves : MonoBehaviour
         // Задаем текущее направление движения в зависимости от нажатой клавиши
         if (Input.GetKey(KeyCode.W))
         {
-            currentDirection = Vector3.up;
+            if(currentDirection != Vector3.down)
+                currentDirection = Vector3.up;
         }
         else if (Input.GetKey(KeyCode.S))
         {
-            currentDirection = Vector3.down;
+            if(currentDirection != Vector3.up)
+                currentDirection = Vector3.down;
         }
         else if (Input.GetKey(KeyCode.A))
         {
-            currentDirection = Vector3.left;
+            if(currentDirection != Vector3.right)
+                currentDirection = Vector3.left;
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            currentDirection = Vector3.right;
+            if(currentDirection != Vector3.left)
+                currentDirection = Vector3.right;
         }
 
         // Если персонаж не движется, запускаем корутину движения
