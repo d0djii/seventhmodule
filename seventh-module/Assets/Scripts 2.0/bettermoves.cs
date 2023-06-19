@@ -12,7 +12,7 @@ public class bettermoves : MonoBehaviour
 
     void Awake()
     {
-        transform.position = new Vector3(1, 1, 1);
+        transform.position = new Vector3(0, 0, 1);
     }
 
     void Update()

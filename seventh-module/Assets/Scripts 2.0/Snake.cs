@@ -10,7 +10,7 @@ public class Snake : MonoBehaviour {
     private float gridMoveTimerMax;
 
     private void Awake() {
-        gridPosition = new Vector3Int(1, 1, 1);
+        gridPosition = new Vector3Int(0, 0, 1);
         gridMoveTimerMax = .5f;
         gridMoveTimer = gridMoveTimerMax;
         gridMoveDirection = new Vector3Int (1, 0, 1);
