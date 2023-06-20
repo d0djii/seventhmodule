@@ -9,6 +9,7 @@ public class Timer : MonoBehaviour
     private int min = 0;
     private TMP_Text _TimerText;
     [SerializeField] private int delta = 0;
+    public bool isTimerRunning = true;
 
     private void Start()
     {
@@ -18,16 +19,17 @@ public class Timer : MonoBehaviour
 
     IEnumerator ITimer()
     {
-        while(true)
+        while (isTimerRunning)
         {
-            if (sec==59)
+            if (sec == 59)
             {
                 min++;
-                sec=-1;
+                sec = -1;
             }
-            sec+=delta;
-            _TimerText.text= min.ToString("D2")+" : " + sec.ToString("D2");
+            sec += delta;
+            _TimerText.text = min.ToString("D2") + " : " + sec.ToString("D2");
             yield return new WaitForSeconds(1);
         }
     }
 }
+

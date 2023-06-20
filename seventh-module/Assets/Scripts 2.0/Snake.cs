@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Snake : MonoBehaviour {
     
+    public Vector2Int enlargedGridSize;
+    public Camera mainCamera;       
+    private Vector2Int currentGridSize;
     private Vector3Int gridMoveDirection;
     private Vector3Int gridPosition;
     private float gridMoveTimer;
@@ -14,6 +17,7 @@ public class Snake : MonoBehaviour {
         gridMoveTimerMax = .5f;
         gridMoveTimer = gridMoveTimerMax;
         gridMoveDirection = new Vector3Int (1, 0, 1);
+        currentGridSize = enlargedGridSize;
     }
 
     private void Update() {
@@ -50,7 +54,6 @@ public class Snake : MonoBehaviour {
             transform.position = new Vector3(gridPosition.x, gridPosition.y, gridPosition.z);
             transform.eulerAngles = new Vector3(0, 0, GetAngleFromVector(gridMoveDirection) - 90);
         }
-        
     }
 
     private float GetAngleFromVector(Vector3Int d) {
