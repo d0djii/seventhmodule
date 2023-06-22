@@ -4,22 +4,34 @@ using UnityEngine;
 
 public class FruitInteraction : MonoBehaviour
 {
+    public GameOverScreen GameOverScreen;
+    private bool canClickFruits = true;
+
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        // Проверяем, является ли экран GameOver активным
+        if (!GameOverScreen.gameObject.activeSelf && canClickFruits)
         {
-            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Collider2D hitCollider = Physics2D.OverlapPoint(mousePosition);
-
-            if (hitCollider != null)
+            if (Input.GetMouseButtonDown(0))
             {
-                Food hitFood = hitCollider.GetComponent<Food>();
-                if (hitFood != null)
+                Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                Collider2D hitCollider = Physics2D.OverlapPoint(mousePosition);
+
+                if (hitCollider != null)
                 {
-                    hitFood.RandomizePosition();
-                    hitFood.score++;
+                    Food hitFood = hitCollider.GetComponent<Food>();
+                    if (hitFood != null)
+                    {
+                        hitFood.RandomizePosition();
+                        hitFood.score++;
+                    }
                 }
             }
         }
+    }
+
+    public void SetClickability(bool clickable)
+    {
+        canClickFruits = clickable;
     }
 }

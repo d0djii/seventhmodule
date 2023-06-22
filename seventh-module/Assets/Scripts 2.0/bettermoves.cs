@@ -9,7 +9,7 @@ public class bettermoves : MonoBehaviour
     private Vector3 origPos, targetPos;
     private float timeToMove = 0.2f;
 
-    private Vector3 currentDirection = Vector3.zero; // Текущее направление движения
+    private Vector3 currentDirection = Vector3.zero;
 
     void Awake()
     {
@@ -18,32 +18,36 @@ public class bettermoves : MonoBehaviour
 
     void Update()
     {
-        // Задаем текущее направление движения в зависимости от нажатой клавиши
-        if (Input.GetKey(KeyCode.W))
+        
+        if (!GameOverScreen.gameObject.activeSelf)
         {
-            if (currentDirection != Vector3.down)
-                currentDirection = Vector3.up;
-        }
-        else if (Input.GetKey(KeyCode.S))
-        {
-            if (currentDirection != Vector3.up)
-                currentDirection = Vector3.down;
-        }
-        else if (Input.GetKey(KeyCode.A))
-        {
-            if (currentDirection != Vector3.right)
-                currentDirection = Vector3.left;
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            if (currentDirection != Vector3.left)
-                currentDirection = Vector3.right;
-        }
+            
+            if (Input.GetKey(KeyCode.W))
+            {
+                if (currentDirection != Vector3.down)
+                    currentDirection = Vector3.up;
+            }
+            else if (Input.GetKey(KeyCode.S))
+            {
+                if (currentDirection != Vector3.up)
+                    currentDirection = Vector3.down;
+            }
+            else if (Input.GetKey(KeyCode.A))
+            {
+                if (currentDirection != Vector3.right)
+                    currentDirection = Vector3.left;
+            }
+            else if (Input.GetKey(KeyCode.D))
+            {
+                if (currentDirection != Vector3.left)
+                    currentDirection = Vector3.right;
+            }
 
-        // Если персонаж не движется, запускаем корутину движения
-        if (!isMoving)
-        {
-            StartCoroutine(MovePlayer(currentDirection));
+            
+            if (!isMoving)
+            {
+                StartCoroutine(MovePlayer(currentDirection));
+            }
         }
     }
 
@@ -57,7 +61,7 @@ public class bettermoves : MonoBehaviour
 
         transform.eulerAngles = new Vector3(0, 0, GetAngleFromVector(direction) - 90);
 
-        // Проверяем возможность движения в заданном направлении
+        
         if (!CheckCollision(targetPos))
         {
             while (elapsedTime < timeToMove)
@@ -82,15 +86,15 @@ public class bettermoves : MonoBehaviour
 
     private bool CheckCollision(Vector3 position)
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(position, 0.1f); // Радиус проверки столкновения
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(position, 0.01f);
         foreach (Collider2D collider in colliders)
         {
             if (collider.CompareTag("Obstacle"))
             {
                 GameOverScreen.Setup();
-                return true; // Обнаружено столкновение с препятствием
+                return true; 
             }
         }
-        return false; // Нет столкновений
+        return false; 
     }
 }

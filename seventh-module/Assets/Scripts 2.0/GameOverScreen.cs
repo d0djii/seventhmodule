@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class GameOverScreen : MonoBehaviour
 {
-    public Timer timer; // Ссылка на компонент Timer
+    public Timer timer;
 
     public void Setup()
     {
         gameObject.SetActive(true);
-        timer.isTimerRunning = false; // Остановка таймера
+        timer.isTimerRunning = false;
     }
 }
