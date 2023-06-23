@@ -6,7 +6,6 @@ public class GameHandler : MonoBehaviour
     private static GameHandler instance;
     private static int score;
     private static bool wallsRemoved;
-
     public GameObject[] wallsToRemove;
 
     private void Awake()
