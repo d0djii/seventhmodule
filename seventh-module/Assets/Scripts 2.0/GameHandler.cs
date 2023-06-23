@@ -1,4 +1,5 @@
 using UnityEngine;
+using Cinemachine;
 using UnityEngine.UI;
 
 public class GameHandler : MonoBehaviour
@@ -7,6 +8,8 @@ public class GameHandler : MonoBehaviour
     private static int score;
     private static bool wallsRemoved;
     public GameObject[] wallsToRemove;
+    public CinemachineVirtualCamera virtualCamera;
+    public GameObject Snake;
 
     private void Awake()
     {
@@ -42,6 +45,11 @@ public class GameHandler : MonoBehaviour
         foreach (GameObject wall in wallsToRemove)
         {
             Destroy(wall);
+        }
+
+        if (Snake != null)
+        {
+            virtualCamera.Follow = Snake.transform;
         }
     }
 }
