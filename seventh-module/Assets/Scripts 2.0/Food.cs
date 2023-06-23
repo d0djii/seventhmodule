@@ -1,42 +1,41 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 public class Food : MonoBehaviour
 {
-    [SerializeField] GameObject[] Fruits;
-    public BoxCollider2D gridArea;
+    public BoxCollider2D gridArea1;
+    public BoxCollider2D gridArea2;
+    public int score;
+    [SerializeField] Text scoreText;
 
-    public GameObject Fruit;
+    private BoxCollider2D currentGridArea;
 
-    public static Food i;
-
-    private void Awake(){
-        i = this;
-    }
     private void Start()
     {
-        Spawn_Food();
-        Spawn_Food();
-        Spawn_Food();
-        Spawn_Food();
-        Spawn_Food();
+        currentGridArea = gridArea1;
+        RandomizePosition();
     }
-    public void Spawn_Food()
+
+    public void RandomizePosition()
     {
-        Bounds bounds = gridArea.bounds;
+        Bounds bounds = currentGridArea.bounds;
         float x = Random.Range(bounds.min.x, bounds.max.x);
         float y = Random.Range(bounds.min.y, bounds.max.y);
-        int rand = Random.Range(0,Fruits.Length - 1);
-        var position = new Vector3(Mathf.Round(x), Mathf.Round(y), 0.0f);
-        Fruit = Instantiate(Fruits[rand], position, Quaternion.identity);
+        transform.position = new Vector3(Mathf.Round(x), Mathf.Round(y), 0.0f);
     }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player") {
-            Destroy(Fruit);
+        if (other.CompareTag("Player"))
+        {
+            RandomizePosition();
             GameHandler.Eat_Regular();
-            Spawn_Food();
-            
-        }       
+
+            if (GameHandler.GetScore() >= 100)
+            {
+                currentGridArea = gridArea2;
+            }
+        }
     }
 }

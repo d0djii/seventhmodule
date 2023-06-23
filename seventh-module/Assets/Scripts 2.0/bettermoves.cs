@@ -7,7 +7,7 @@ public class bettermoves : MonoBehaviour
     public GameOverScreen GameOverScreen;
     private bool isMoving;
     private Vector3 origPos, targetPos;
-    private float timeToMove = 0.4f;
+    private float timeToMove = 0.2f;
 
     private Vector3 currentDirection = Vector3.zero;
 
@@ -89,15 +89,10 @@ public class bettermoves : MonoBehaviour
         Collider2D[] colliders = Physics2D.OverlapCircleAll(position, 0.01f);
         foreach (Collider2D collider in colliders)
         {
-            if (collider.CompareTag("Obstacle"))
+            if (collider.CompareTag("Wall"))
             {
                 GameOverScreen.Setup();
                 return true; 
-            }
-            else if (collider.CompareTag("Food")) {
-                Destroy(Food.i.Fruit);
-                GameHandler.Eat_Regular();
-                Food.i.Spawn_Food();
             }
         }
         return false; 
