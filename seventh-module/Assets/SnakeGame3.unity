@@ -290,7 +290,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 93182673}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3894,6 +3894,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snakeHeadSprite: {fileID: 21300000, guid: 3552234addde6aa4187c83fc6a0b8021, type: 3}
   snakeBody: {fileID: 21300000, guid: f93025eb0c3c8e8439d7386fbfc93bd8, type: 3}
+  Apple: {fileID: 21300000, guid: 5e260650dc92481438632ec39563ec25, type: 3}
+  Orange: {fileID: 21300000, guid: 59a7ff6cb1f171345b8a6a7927497dc3, type: 3}
+  Banana: {fileID: 21300000, guid: d82664e5a140e61499ecb38f546ea650, type: 3}
+  Pear: {fileID: 21300000, guid: 0e06e5b1f526fa74ca1500aa662e6160, type: 3}
 --- !u!1 &1011304967
 GameObject:
   m_ObjectHideFlags: 0
