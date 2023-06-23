@@ -6,10 +6,10 @@ MonoImporter:
   defaultReferences:
   - snakeHeadSprite: {fileID: 21300000, guid: 3552234addde6aa4187c83fc6a0b8021, type: 3}
   - snakeBody: {fileID: 21300000, guid: f93025eb0c3c8e8439d7386fbfc93bd8, type: 3}
-  - Apple: {fileID: 21300000, guid: 5e260650dc92481438632ec39563ec25, type: 3}
-  - Orange: {fileID: 21300000, guid: 59a7ff6cb1f171345b8a6a7927497dc3, type: 3}
-  - Banana: {fileID: 21300000, guid: d82664e5a140e61499ecb38f546ea650, type: 3}
-  - Pear: {fileID: 21300000, guid: 0e06e5b1f526fa74ca1500aa662e6160, type: 3}
+  - apple: {fileID: 21300000, guid: 5e260650dc92481438632ec39563ec25, type: 3}
+  - banana: {fileID: 21300000, guid: d82664e5a140e61499ecb38f546ea650, type: 3}
+  - pear: {fileID: 21300000, guid: 0e06e5b1f526fa74ca1500aa662e6160, type: 3}
+  - orange: {fileID: 21300000, guid: 59a7ff6cb1f171345b8a6a7927497dc3, type: 3}
   executionOrder: -20
   icon: {instanceID: 0}
   userData: 

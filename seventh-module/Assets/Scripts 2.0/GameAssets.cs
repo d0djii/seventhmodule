@@ -12,8 +12,8 @@ public class GameAssets : MonoBehaviour
 
     public Sprite snakeHeadSprite;
     public Sprite snakeBody;
-    public Sprite Apple;
-    public Sprite Orange;
-    public Sprite Banana;
-    public Sprite Pear;
+    public Sprite apple;
+    public Sprite banana;
+    public Sprite pear;
+    public Sprite orange;
 }
