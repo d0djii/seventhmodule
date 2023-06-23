@@ -7,9 +7,11 @@ public class Buttons : MonoBehaviour
 {
     public void RestartLevel() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        GameHandler.Reset();
     }
     public void PlayGame() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        GameHandler.Reset();
     }
     public void QuitGame() {
         Application.Quit();

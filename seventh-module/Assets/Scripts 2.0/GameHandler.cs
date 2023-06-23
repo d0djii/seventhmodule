@@ -21,7 +21,9 @@ public class GameHandler : MonoBehaviour
     {
         return score;
     }
-
+    public static void Reset() {
+        score = 0;
+    }
     public static void Eat_Regular()
     {
         score += 5;
