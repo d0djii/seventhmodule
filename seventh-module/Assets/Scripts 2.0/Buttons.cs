@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Buttons : MonoBehaviour
 {
     public void RestartLevel() {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     public void PlayGame() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -15,6 +15,6 @@ public class Buttons : MonoBehaviour
         Application.Quit();
     }
     public void Back() {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 }
