@@ -3,7 +3,12 @@ guid: 96abb5adf208c55488fd5fa214c7eae8
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - gridArea: {instanceID: 0}
+  - Apple: {fileID: 6496857446679553010, guid: c1e44c5a013f6a2419cac4642f52f0c5, type: 3}
+  - Banana: {fileID: 1303355906765020298, guid: b642a71d467ffd34fb5a526f14660794, type: 3}
+  - Pear: {fileID: 373770630330484014, guid: 5e05357f41ab2464ca883dea9e058814, type: 3}
+  - Orange: {fileID: 8832082172761047604, guid: f2a4a36b16b13ed41b61db683759c957, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

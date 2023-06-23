@@ -27,7 +27,7 @@ public class Timer : MonoBehaviour
                 sec = -1;
             }
             sec += delta;
-            _TimerText.text = min.ToString("D2") + " : " + sec.ToString("D2");
+            _TimerText.text = min.ToString("D2") + ":" + sec.ToString("D2");
             yield return new WaitForSeconds(1);
         }
     }

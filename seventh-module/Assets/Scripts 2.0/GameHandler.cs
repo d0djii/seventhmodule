@@ -4,13 +4,24 @@ using UnityEngine;
 
 public class GameHandler : MonoBehaviour
 {
-    void Start()
-    {
-        
+    private static GameHandler inst;
+
+    private static int score;
+
+    private void Awake() {
+        inst = this;
     }
 
-    void Update()
-    {
-        
+    public static int GetScore() {
+        return score;
+    }
+
+    public static void Eat_Regular(){
+        score += 5;
+        Debug.Log(GetScore());
+    }
+    public static void Click_Regular(){
+        score += 1;
+        Debug.Log(GetScore());
     }
 }

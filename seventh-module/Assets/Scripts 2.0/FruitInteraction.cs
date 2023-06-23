@@ -19,8 +19,9 @@ public class FruitInteraction : MonoBehaviour
                     Food hitFood = hitCollider.GetComponent<Food>();
                     if (hitFood != null)
                     {
-                        hitFood.RandomizePosition();
-                        hitFood.score++;
+                        Debug.Log("aga");
+                        Food.i.Spawn_Food();
+                        GameHandler.Click_Regular();
                     }
                 }
             }
